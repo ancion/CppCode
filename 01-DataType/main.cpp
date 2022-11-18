@@ -2,11 +2,12 @@
 #include <cstring>
 #include <iostream>
 
-// 头文件的引入，主要是为了让程序更加简洁
+// 头文件的引入，主要是为了让程序更加简洁, 头文件的作用就是将
+// 一部分定义在其他文件中的内容插入到声明 #include<> 的地方
 //  ==> #include<stdio.h> == #include<cstdio>
 //  ==> #include<string.h> == #include<cstring>
 
-// 不适用命名空间的写法
+// 不使用命名空间的写法
 // int main(void)
 // {
 //    int n ;
@@ -27,7 +28,7 @@ int main(void) {
   return 0;
 }
 
-int string() {
+int str_test() {
   // const 用于定义一个常量，常量的值不能改变
   const string str = "Hello World!";
 
@@ -41,6 +42,7 @@ int string() {
 
   return 0;
 }
+
 
 int boolean() {
   // cpp 中的布尔值，只有两个值，true 和 false
