@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <string>
 
@@ -8,8 +6,8 @@
 // <<  表示输出的方向，可以像管道一样，多次拼接
 //
 // std::cout : console out
-// std::cin   : console in
-// std::endl ：endline 就是 `\n` 是相同的含义
+// std::cin  : console in
+// std::endl : endline 就是 `\n` 是相同的含义
 
 using namespace std;
 
