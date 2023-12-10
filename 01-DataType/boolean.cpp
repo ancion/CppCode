@@ -15,6 +15,8 @@ void boolean() {
   cout << a << endl;
   cout << b << endl;
   cout << c << endl;
+  // 在输出的时候。true -> 1 ， false -> 0
   cout << flag << endl;
   cout << flog << endl;
+
 }
