@@ -7,13 +7,6 @@
 //  if () {} else {}
 //  switch { case ..}
 //
-// 循环结构
-//
-// while () {};
-//
-// do { } while ();
-//
-//
 
 #include <iostream>
 
