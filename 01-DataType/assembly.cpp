@@ -1,4 +1,5 @@
-#include <cstdio>
+//
+// #include <cstdio>
 #include <ctime>
 #include <iostream>
 
@@ -16,11 +17,13 @@ int fib(int x) {
 
 int main() {
   int t1, t2;
-
+  // clock 函数得到的是纳秒数。
   t1 = clock();
-  fib(40);
+  cout << t1 << endl;
+  fib(50);
   t2 = clock();
-
-  cout << t2 - t1 << "ms" << endl;
+  cout << t2 << endl;
+  cout << (double)(t2 - t1) / 1000 << "ms" << endl;
+  cout << (double)(t2 - t1) / CLOCKS_PER_SEC << "s" << endl;
   return 0;
 }
