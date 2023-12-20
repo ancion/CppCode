@@ -1,15 +1,14 @@
 #include <iostream>
 using namespace std;
 
-
 //
 // cpp 中的函数
 //
 // ====================================================================================
 // > 函数的声明必须在函数的调用之前
 // ====================================================================================
-// > 函数声明与定义可以分开，如果先定义，后实现可以在 main 函数前声明, main 函数后定义
-// > 如果声明和定义是在一起的，就只能写在 main 函数之前
+// > 函数声明与定义可以分开，如果先定义，后实现可以在 main 函数前声明, main
+// 函数后定义 > 如果声明和定义是在一起的，就只能写在 main 函数之前
 //
 //
 // > 函数可以被多次声明，但是只能定义一次，否则无法被编译
@@ -35,14 +34,19 @@ using namespace std;
 // 调用函数的时候，调用者把数值 ==赋值== 给了函数的参数
 //
 //
+// -----------------
+// 指针类型的参数Q
+//   - 可以减少函数调用时内存拷贝, 节省内存使用
+//   - 可以在函数中修改实参的值
+//
+//
 
 // 函数声明不需要函数体，但是必须以 ; 结尾
-int add(int a, int b); 
-
+int add(int a, int b);
 
 // 函数的参数不是必须的，可以是没有参数传入的
 // 函数内部对于参数的修改不会影响调用时函数的实参
-void arguments(int no, string str){
+void arguments(int no, string str) {
 
   // 修改函数的参数
   str = str + ", world";
@@ -50,7 +54,14 @@ void arguments(int no, string str){
 
   // 输出 str
   cout << "in f(x): " << str << " " << no << endl;
+}
 
+// 当指针类型的变量被传递到函数中，
+// 在函数中修改了指针变量指向的值，这时候外部调用函数的实参也会发生变换
+void make_sence(string *name, int *age) {
+  cout << "name: " << *name << ", age: " << *age << endl;
+  *name = "Alex";
+  *age = 20;
 }
 
 int main() {
@@ -61,10 +72,12 @@ int main() {
   int a = 10;
   arguments(10, hello);
   // 再次查看
-  cout << "callout f(x): " << hello << " "  << a << endl;
+  cout << "callout f(x): " << hello << " " << a << endl;
 
+  string name = "plob";
+  int age = 10;
+  make_sence(&name, &age);
+  cout << "name: " << name << ", age: " << age << endl;
 }
 
-int add(int a, int b){
-  return a + b;
-}
+int add(int a, int b) { return a + b; }
