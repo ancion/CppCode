@@ -48,4 +48,18 @@ void init() {
   delete p;
 }
 
-int main() {}
+void make_arr() {
+
+  // 声明一个可以存储 10 个 int 类型数据的数组
+  int *arr = new int[10];
+
+  // 释放这部分内存空间
+  delete[] arr;
+}
+
+int main() { 
+  // 数值的申请使用
+  init(); 
+  // 数将内存空间申请使用
+  make_arr();
+}
