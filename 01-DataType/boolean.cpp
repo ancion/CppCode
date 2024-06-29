@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// C++ 种 bool 类型
+// C++ 中 bool 类型
 // C 中是没有布尔值的，只有0 (false) 和 非 0 为（true）
 // C++ 为了提高代码的可读性, 新增的 bool 类型，占用一个字节, 只有 true 和 false
 //     两个值其本质就是占用一个字节的整数，只有两个取值 0,1
