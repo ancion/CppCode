@@ -1,4 +1,3 @@
-
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
@@ -135,7 +134,7 @@ using namespace std;
 // > 二维数组的拷贝
 //
 // void memcpy(void* dest, const void* src, size_t n);
-// 
+//
 // memcpy 函数可以把二维数组中全部的元素复制到另一个相同大小的数组(无论几维)
 // 只能适用于 C++ 的基本类型, n 表示复制的字节数
 //
@@ -165,8 +164,8 @@ void level_array() {
   // 使用遍历的方式来完成输出
   for (int row = 0; row < 2; row++) {
     for (int column = 0; column < 3; column++) {
-      cout << "bh[" << row << "]"
-           << "[" << column << "]=" << bh[row][column] << " ";
+      cout << "bh[" << row << "]" << "[" << column << "]=" << bh[row][column]
+           << " ";
     }
     cout << endl;
   }

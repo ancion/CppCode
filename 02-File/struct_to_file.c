@@ -8,7 +8,7 @@ struct person {
 };
 
 int main() {
-  FILE *fp = fopen("person.txt", "wb");
+  FILE *fp = fopen("./temp/person.data", "wb");
   if (fp != NULL) {
     printf("%s\n", "File open success");
   }
