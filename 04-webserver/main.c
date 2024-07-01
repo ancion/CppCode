@@ -8,9 +8,9 @@
 int main() {
 
   int s = socket(AF_INET, SOCK_STREAM, 0);
-  struct sockaddr_in addr = {AF_INET, 0x901f, 0};
+  const struct sockaddr_in addr = {AF_INET, 0x901f, 0};
 
-  bind(s, &addr, sizeof(addr));
+  int result = bind(s, &addr, sizeof(addr));
 
   listen(s, 10);
 
