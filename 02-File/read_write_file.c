@@ -1,6 +1,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
@@ -17,13 +18,27 @@
 //-------------------------------------------------------------
 //
 // read 文件读取 : 将一个文件描述符中读取内容到 buf 中
-//
 // read (int fd, void *buf, size_t count)
 //
+// write 文件写入, 将 buf 中内容写入到给定的文件描述符
+// write (int fd, void *buf, size_t count)
 //
-// write 文件写入
-// write (int fd, )
+//-------------------------------------------------------------
+// 从文件的读写可以看出，当我们读取文件后写入文件，这时候文本中
+// 指针的位置在读取数据结束的位置，写入的时候直接从这个位置开始
+// 继续往文件中写入。而不是在文件末尾追加，也不是从文件头部写入
 //
+//
+// 当想要把内容写入某个位置时, 可以使用 lseek 来调整文件指针位置
+// int lseek(int fd, off_t offset, int whence)
+//
+//     > offset, 文件内指针的偏移量, 可以是负数，则往反方向偏移
+//     > whence, 偏移量计算的方式
+//        - SEEK_SET : 从文件头开始计算
+//        - SEEK_CUR : 从文件指针当前所在位置计算
+//        - SEEK_END : 从文件的末尾开始计算
+//
+//     > 返回当前文件指针偏移的位置,
 
 int main() {
 
@@ -40,6 +55,16 @@ int main() {
 
   // 输出打印的文件
   printf("read file content: %s\n", buf);
+
+  // 在数据写入之前将指针偏移到不同的位置，查看文件输出的效果
+  // int s = lseek(fd, 0, SEEK_SET);
+  // int s = lseek(fd, 2, SEEK_CUR);
+  int s = lseek(fd, 0, SEEK_END);
+  printf("cur seek position: %d\n", s);
+
+  // 文件写入
+  int w = write(fd, buf, strlen(buf));
+  printf("write content len: %d\n", w);
 
   // 释放内存缓冲区
   free(buf);
