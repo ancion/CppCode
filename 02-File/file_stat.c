@@ -2,6 +2,8 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <utime.h>
+#include <time.h>
 
 //
 // stat 函数主要用于获取文件/文件夹的信息
@@ -31,11 +33,22 @@
 //   但不是所有系统都有这个字段)
 //
 // 这些成员提供了有关文件的各种信息，可以帮助在程序中更好的处理文件
+// 
+//
+// > utime() : 修改文件的访问时间和修改时间, 这个函数可以在不打开文件
+//             的情况下修改这个时间
+// 
+//    int utime(const char *filename, const struct utimbuf *times);
+//       struct utimbuf {
+//            time_t actime;       /* access time */
+//            time_t modtime;      /* modification time */
+//       };
+// 
 //
 //
 
-int main() {
 
+void stat_file(){
   // 构建一个结构体，用于接收对应的 stat 函数执行的结果
   struct stat s;
 
@@ -47,5 +60,25 @@ int main() {
   printf("atime: %ld\n", t);
   printf("block: %ld\n", s.st_blocks);
 
+}
+
+void modify_time() {
+
+  time_t t;
+  time(&t);
+
+  struct utimbuf buf = {
+    .actime = t,
+    .modtime = t - 200
+  };
+
+  utime("../temp/a.log", &buf);
+
+}
+
+
+int main() {
+  // stat_file();
+  modify_time();
   return 0;
 }
