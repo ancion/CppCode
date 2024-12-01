@@ -1,9 +1,15 @@
+//
+//  C 中最早的数据类型是 char, short, int, long, float, double, long double, unsigned (关键字表示无符号)
+//  C90 标准添加了 signed (关键字表示有符号)， void (无类型，无值)
+//  C99 标准添加了 _Bool (布尔值，只有两个取值 true, false)，_Complex (复数), _Imaginary (虚数)
+//
+//
 // c++ 中的 数字主要分为
 // int 整数 (整数总共分为六种)
 // --------------------------------------------------------- 
-// (signed / unsigned)short  ==> 简写 => short / unsigned short
-// (signed / unsigned)int    ==> 简写 => int   / unsigned int
-// (signed / unsigned)long   ==> 简写 => long  / unsigned long
+// (signed / unsigned)short (int)  ==> 简写 => short / unsigned short
+// (signed / unsigned)(long) int    ==> 简写 => int   / unsigned int
+// (signed / unsigned)long long (int)   ==> 简写 => long  / unsigned long
 //
 //
 //  需要注意的是，不同整数长度的类型都有自己取值范围，会出现数据溢出的问题
