@@ -54,20 +54,55 @@ void multicode() {
 
 void number_float() {
 
+  // 浮点类型的数据表示，
+  //
+  // 在标准规范中，浮点类型一般使用科学计数法来表示，通常一个浮点数至少需要六位有效数字
+  // 至少占用 32 位的空间，其中 8 位表示指数部分, 24 位表示尾数(有效数)及其符号
+  //
+  // double 最小取值范围与float 相同，但是至少必须保存 10 位有效数字，
+  // 一般情况下，double 占用 64 位而不是32 位, 
+  // > 一些系统将多出来的 32 位全部用于表示非指数部分,这不仅增加了有效数字的位数(提高了精度) 还减少了舍入误差。
+  // > 另外一些系统将这 32 位一部分用于指数部分，以容纳更大的指数，增加可表示的范围。
+  // > 无论那种方式，double 类型都有至少 13 位的有效数字，超过了标准的最低要求
+  //
   // 字面量的小数会被认为是 double 类型，如果要标定是 float, 数字后使用 f 标记
   float a = 342.456467f;
   double b = 123243354535.353564;
+
+  // long double 精度只要求比 double 更高，没有具体的要求，实际上很少使用
+  // 大部分的场景使用 double 精度已经能满足要求
   long double c = 123243354535.353564;
+
+  // 科学计数法表示浮点数  
+  // 指数部分与有效数之间不能有空格, 以下一些写法都是可以的
+  // 可以省略整数部分(这时候 `.` 必须存在)，小数部分(这时候整数部分必须存在)
+  // 指数部分如果是正数可以省略 `+`
+  double d = 100e-12;
+  double e = 3.131415;
+  double f = 1.56e+12;
+  double g = 4e16;
+  double h = .8e-5;
+  double i = 3.e10;
+
+  // 默认情况下，浮点数字面亮被认为是 double 类型的精度, 
+  // 如果想要使用单精度, 需要`f` 标识
+
   // 使用 cout 会使用科学计数的方式输出, C++ 默认使用 6 位有效数字
   // 如果需要更多位的有效数字可以使用 c 语言中 printf()
-  printf("%lf\n", a);
+  // %f 表示浮点数的输出
+  // %lf 表示 double 类型的浮点数的输出
+  // %Lf 表示 long double 类型的浮点数的输出
+  printf("%f\n", a);
   printf("%lf\n", b);
-  printf("%Lf\n", c);
+  printf("%Lf\n", c); 
+  printf("%lf\n", d);
 }
 
 
 int main() {
   
+  number_float();
+
   // 变量的声明
   std::string name;
   int age;
@@ -80,7 +115,7 @@ int main() {
   weight = 89.9;
   gendle = 'X';
 
-  std::cout << "name: " << name << "age:" << age << "weight: "  << weight << std::endl;
+  cout << "name: " << name << "age:" << age << "weight: "  << weight  << "gendle:" << gendle << std::endl;
 
 }
 
