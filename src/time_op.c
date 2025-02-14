@@ -96,7 +96,7 @@ void show_time() {
   printf("stime: %s\n", s);
 }
 
-int main() {
+int time_usage() {
   show_time();
   diff();
   local();
