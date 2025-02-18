@@ -1,6 +1,14 @@
 #include <iostream>
 
 
+// 动态内存分配
+// 在 C++ 中动态内存分配可以使用 new 和 delete 运算符来完成
+// new 运算符用于分配内存，
+// delete 运算符用于释放内存
+//
+// malloc 和 free 运算符是 C 语言中的函数，用于分配和释放内存
+// malloc 分配的内存不能使用 delete 运算符释放
+
 
 using namespace std;
 
@@ -26,4 +34,8 @@ int main(int argc, char* argv[]) {
   if (myInt == nullptr) {
     cout << "Memory successfully freed." << endl;
   }
+
+
+
+
 }

@@ -163,7 +163,7 @@ private:
   ~Singleton5(){
     std::cout << "~Singleton5() \n";
   }
-  Singleton5(const Singleton5 &) = delete;
+  Singleton5(const Singleton5&) = delete;
   Singleton5 & operator = (const Singleton5&) = delete;
   Singleton5(Singleton5 &&) = delete;
   Singleton5 & operator = (Singleton5 &&) = delete;
