@@ -55,7 +55,7 @@ void local() {
   struct tm *day = localtime(&t);
 
   printf(
-    "%d-%d-%d %d:%d:%d", 
+    "%d-%d-%d %d:%d:%d\n", 
          1900 + day->tm_year, 
          1 + day->tm_mon, 
          day->tm_mday, 
@@ -96,9 +96,8 @@ void show_time() {
   printf("stime: %s\n", s);
 }
 
-int time_usage() {
+void timeops() {
   show_time();
   diff();
   local();
-  return 0;
 }

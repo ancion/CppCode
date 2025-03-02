@@ -1,5 +1,6 @@
 #include "../include/Shape.h"
 #include "../include/mod.h"
+#include "../include/Complex.h"
 
 
 int main (int argc, char *argv[]) {
@@ -8,8 +9,12 @@ int main (int argc, char *argv[]) {
   oop_shape_game();
 
   // time 使用规则
-  time_usage();
+  timeops();
 
+  // 测试复数库的使用
+  Complex c(1, 2);
+  Complex a(2, 2);
+  cout << c + a << endl;
 
   return 0;
 }

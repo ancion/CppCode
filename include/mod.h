@@ -1,9 +1,16 @@
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef __MOD_STUDY
 #define __MOD_STUDY
 
+  void timeops();
 
-void time_usage(void);
+#endif //;
 
 
-#endif
+#ifdef __cplusplus
+}
+#endif // __cplusplus
 
