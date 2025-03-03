@@ -24,6 +24,7 @@
 
 using namespace std;
 
+// 如果不释放内存，一直申请会造成内存泄漏
 void not_delete() {
 
   for (int ii = 1; ii > 0; ii++) {
@@ -33,7 +34,6 @@ void not_delete() {
 }
 
 void init() {
-
   // 申请一块 int 类型的内存空间, 并赋初始值为 5
   int *p = new int(5);
 
@@ -49,7 +49,6 @@ void init() {
 }
 
 void make_arr() {
-
   // 声明一个可以存储 10 个 int 类型数据的数组
   int *arr = new int[10];
 
