@@ -6,7 +6,7 @@ using namespace std;
 // ========================================================
 // > 函数的二进制代码存放在内存四区中的代码段, 函数的地址
 //   就是它在内存中的开始地址, 如果把函数的地址作为参数
-//   就可以在函数中灵活的调用其他函数.
+//   就可以在函数中灵活的调用地址指向的函数.
 // ---------------
 // > 使用函数指针的三个步骤
 //  1. 声明函数指针；
@@ -26,10 +26,14 @@ void declare_func_point() {
   int func1(int a, string str);
   int func2(int no, string message);
   int func3(int id, string info);
+
   // 对应的函数指针的声明是
   // 主要重点是返回值和参数的类型，形参名可以不写，没有实际意义
   // 中间的就是指针的具体名称(整体是函数申明, 不可分割)
   int (*fpa)(int, string);
+
+  // 另一个函数
+  int (*f)(string, int);
 
   // 返回值不同, 与前三种不同类型
   bool func4(int id, string info);
@@ -80,6 +84,9 @@ void flow(void (*c)(int), int no) {
 int main(){
   // 申明函数指针
   declare_func_point();
+
+  // 使用函数指针调用函数
+  funcpointcall()
 
   // 将函数作为参数进行调用
   flow(custom, 8990);

@@ -1,19 +1,11 @@
 #include <iostream>
-#include <stdio.h>
 
-void test() { printf("hello-----\n"); }
+using namespace std;
 
-// 主函数
 int main() {
-  int a = 10;
-  if (a == 10) {
-    printf("hello\n");
-  }
-  test();
-  // iostream
-  std::cout << "hello world\n";
-  std::cout << "hello world\n";
-  std::cout << "hello world\n";
-  std::cout << "hello world\n";
+  cout << "hello" << endl;
+  auto arr = new int[] {  1, 2, 3, 4, 5, 6 };
+  cout << arr[1] << endl;
+  
   return 0;
 }

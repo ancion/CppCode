@@ -52,6 +52,20 @@ void const_ptr() {
   p = &b;
 }
 
+// 常指针常量
+
+void const_type_const_ptr(){
+
+  int a = 10, b = 20;
+  const int *const p = &a;  
+
+  // 此时指针指向的值不可修改
+  // *p = 20;
+  // 指针指向的地址也不可变  
+  // p = &b;
+}
+
+
 int main() {
 
   // 常量指针
