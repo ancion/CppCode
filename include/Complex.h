@@ -2,6 +2,7 @@
 #define COMPLEX_H
 
 #include <ostream>
+
 class Complex {
 public:
   Complex(double real, double imag);

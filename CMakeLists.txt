@@ -20,6 +20,9 @@ target_sources(complex PRIVATE 03-oop/Complex.cpp)
 add_library(timeops STATIC) 
 target_sources(timeops PRIVATE src/time_op.c)
 
-target_link_libraries(ccpp PRIVATE shape complex timeops)
+add_library(vector STATIC)
+target_sources(vector PRIVATE 01-DataType/vector.cpp)
+
+target_link_libraries(ccpp PRIVATE shape complex timeops vector)
 
 
