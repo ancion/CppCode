@@ -13,6 +13,7 @@ void print_vector(vector<int> &v) {
 }
 
 void vector_usage() {
+  cout << "---------------test of vector --------------------" << endl;
 
   // Declare a vector that expand with integer
   // More on template (<int>) later
@@ -43,4 +44,23 @@ void vector_usage() {
   v1.resize(10);
   cout << "Resized vector size is: " << v1.size() << endl;
   print_vector(v1);
+
+  // Re-initialize vector
+  for (int i = 0; i < 10; i++) {
+    // Method for expanding the vector
+    v1.at(i) = i;
+  }
+
+  // Inser into the vector before a chosen position
+  v1.insert(v1.begin() + 4 , 5);
+  print_vector(v1);
+
+  // Erase an element at a specific position
+  v1.erase(v1.begin() + 4);
+  print_vector(v1);
+
+  // Erase the end element
+  v1.pop_back();
+  print_vector(v1);
+  cout << "---------------test of vector --------------------" << endl;
 }

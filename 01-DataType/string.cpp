@@ -2,6 +2,7 @@
 #include <cstring>
 #include <iostream>
 #include <stdio.h>
+#include "../include/cppmod.h"
 
 using namespace std;
 
@@ -117,8 +118,6 @@ using namespace std;
 //    长度固定值 8
 //  > 在 VS 中，如果要使用 C 标准的字符串操作，要在源代码的最上面添加
 //    #include_CRT_SECURE_NO_WARNINGS
-//
-//
 //
 //------------------------------------------------------------------------------------
 // String class operation
@@ -263,7 +262,18 @@ void multi_line_str() {
   cout << con << endl;
 }
 
-int main() {
+void str_func() {
+  // capacity >= size
+  string s1 = "hello world!!";
+  cout<< "size: " << s1.size() << ", capacity: " << s1.capacity() << endl;
+
+  // resize 
+  s1.resize(5);
+  cout<< "size: " << s1.size() << ", capacity: " << s1.capacity() << endl;
+}
+
+
+void str_usage() {
   cout << "---------------test of string --------------------" << endl;
   // C 类型的字符串
   c_style_string();
@@ -286,6 +296,8 @@ int main() {
   //
   str_test();
 
+  str_func();
+
   // 字符串字面量
   str_face_val();
 
@@ -293,5 +305,4 @@ int main() {
   multi_line_str();
 
   cout << "---------------test of string --------------------" << endl;
-  return 0;
 }
