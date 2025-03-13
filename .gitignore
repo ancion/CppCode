@@ -2,3 +2,5 @@
 output/
 build/
 temp/
+.cache/
+libs/
