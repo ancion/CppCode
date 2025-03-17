@@ -60,3 +60,5 @@ public:
 
   virtual const string getDescription() const override;
 };
+
+void oop_feature();

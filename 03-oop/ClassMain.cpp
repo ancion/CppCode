@@ -1,11 +1,13 @@
 #include "../include/cppmod.h"
 #include "../include/Shape.h"
 #include "../include/Complex.h"
+#include "../include/IntArray.h"
+#include "../include/Vehicle.h"
 
-void test_oop() {
+void oop_usage() {
 
   // oop 测试
-  oop_shape_game();
+  // oop_shape_game();
 
   // 测试复数库的使用
   Complex c(1, 2);
@@ -13,6 +15,10 @@ void test_oop() {
   cout << c + a << endl;
 
   // class inherite
-  oop_feature();
+  // oop_feature();
+
+
+  // class destructor
+  class_destructor();
 
 }

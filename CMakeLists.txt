@@ -14,14 +14,10 @@ aux_source_directory(src/*.cpp SOURCES)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
 
+aux_source_directory(03-oop/ OOP)
 
 add_executable(ccpp src/main.cpp)
 
-add_library(shape STATIC)
-target_sources(shape PRIVATE 03-oop/Shape.cpp)
-
-add_library(complex STATIC)
-target_sources(complex PRIVATE 03-oop/Complex.cpp)
 
 add_library(timeops STATIC) 
 target_sources(timeops PRIVATE src/time_op.c)
@@ -32,8 +28,8 @@ target_sources(vector PRIVATE 01-DataType/vector.cpp)
 add_library(str STATIC)
 target_sources(str PRIVATE 01-DataType/string.cpp)
 
-add_library(vehicle STATIC)
-target_sources(vehicle PRIVATE 03-oop/Vehicle.cpp)
+add_library(oop STATIC)
+target_sources(oop PRIVATE ${OOP})
 
 add_library(mem STATIC)
 target_sources(mem PRIVATE point/newdelete.cpp)
@@ -42,12 +38,10 @@ add_library(co STATIC)
 target_sources(co PRIVATE 06-coroutine/coroutine.cpp)
 
 target_link_libraries(ccpp PRIVATE 
-  shape 
-  complex 
+  oop
   timeops 
   vector 
   str 
-  vehicle
   mem
   co
 )
