@@ -21,7 +21,7 @@ Complex Complex::operator*(const Complex& other) const {
 
 Complex Complex::operator/(const Complex& other) const {
   double denom = other.real * other.real + other.imag * other.imag;
-  if (denom) throw std::invalid_argument("Denominator is zero");
+  if (!denom) throw std::invalid_argument("Denominator is zero");
   return Complex(
     (real * other.real + imag * other.imag) / denom, 
     (imag * other.real - real * other.imag) / denom
@@ -44,3 +44,13 @@ std::ostream & operator<<(std::ostream &os, const Complex& c) {
   }
   return os;
 }
+
+void operator_overload() {
+  Complex c1(1, 2);
+  Complex c2(3, 4);
+  std::cout << c1 + c2 << std::endl;
+  std::cout << c1 - c2 << std::endl;
+  std::cout << c1 * c2 << std::endl;
+  std::cout << c1 / c2 << std::endl;
+}
+

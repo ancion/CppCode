@@ -3,6 +3,7 @@
 #include "../include/Complex.h"
 #include "../include/IntArray.h"
 #include "../include/Vehicle.h"
+#include "../include/Template.h"
 
 void oop_usage() {
 
@@ -10,9 +11,7 @@ void oop_usage() {
   // oop_shape_game();
 
   // 测试复数库的使用
-  Complex c(1, 2);
-  Complex a(2, 2);
-  cout << c + a << endl;
+  operator_overload();
 
   // class inherite
   // oop_feature();
@@ -20,5 +19,10 @@ void oop_usage() {
 
   // class destructor
   class_destructor();
+
+
+  // function template
+  template_usage();
+
 
 }

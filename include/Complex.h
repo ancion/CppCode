@@ -18,4 +18,6 @@ private:
 };
 
 
+void operator_overload();
+
 #endif // !COMPLEX_H;

@@ -7,6 +7,7 @@
 //
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -43,6 +44,35 @@ void forloop() {
   }
 }
 
+void newforloop() {
+  // new for loop just list java and python
+  for (int i : { 1, 2, 9, 3, 8, 4, 6,5}) {
+    cout << i << " ";
+  }
+  cout << endl;
+
+  vector<int> i_vector;
+
+  for (unsigned i = 0; i < 6; i++) {
+    int temp = rand() % 100;
+    cout << temp << " ";
+    i_vector.push_back(temp);
+  }
+  cout << endl;
+
+  for(auto &i: i_vector) {
+    // Increment each element in the vector 
+    i++;
+  }
+
+  // print out the new vector
+  for(unsigned i = 0; i< i_vector.size(); i++){
+    cout << i_vector[i] << " ";
+  }
+  cout << endl;
+}
+
+
 void dowhile() {
   int no = 10;
   do {
@@ -74,6 +104,7 @@ int main() {
 
   // for 循环
   forloop();
+  newforloop();
 
   // do {} while()
   // 先执行一次再判断 while 条件
