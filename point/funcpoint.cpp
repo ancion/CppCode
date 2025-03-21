@@ -81,12 +81,12 @@ void flow(void (*c)(int), int no) {
   cout << "end, start lauch" << endl;  // 函数调用之后
 }
 
-int main(){
+void fptr(){
   // 申明函数指针
   declare_func_point();
 
   // 使用函数指针调用函数
-  funcpointcall()
+  funcpointcall();
 
   // 将函数作为参数进行调用
   flow(custom, 8990);

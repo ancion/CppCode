@@ -7,6 +7,6 @@ void str_usage();
 
 void oop_usage();
 
-void new_delete_memory();
+void pointer_usage();
 
 void coroutine();

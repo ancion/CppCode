@@ -41,7 +41,7 @@ void changeval() {
   cout << "p" << *p << endl;
 }
 
-int main() {
+int level_ptr() {
 
   // 二级指针
   two_level_ptr();

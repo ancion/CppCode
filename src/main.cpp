@@ -1,5 +1,6 @@
 #include "../include/cmod.h"
 #include "../include/cppmod.h"
+#include "../include/Pointers.h"
 
 
 int main (int argc, char *argv[]) {
@@ -15,8 +16,8 @@ int main (int argc, char *argv[]) {
   //
   oop_usage();
 
-
-  // new_delete_memory();
+  // 
+  pointer_usage();
 
   // coroutine();
 

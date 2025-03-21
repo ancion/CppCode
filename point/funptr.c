@@ -22,7 +22,7 @@ int sub (int a, int b) { return a - b; }
 int mul (int a, int b) { return a * b; }
 int div (int a, int b) { return a / b; }
 
-int main(){
+void funptr(){
 
   int (*p)(int, int) = NULL;
   int m = 40, n = 15;

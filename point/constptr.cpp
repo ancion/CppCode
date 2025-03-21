@@ -66,13 +66,11 @@ void const_type_const_ptr(){
 }
 
 
-int main() {
+void constptr() {
 
   // 常量指针
   const_ptr();
 
   // 指针常量
   ptr_const();
-
-  return 0;
 }

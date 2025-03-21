@@ -55,11 +55,9 @@ void express(int *no, string *message) {
   cout << "no= " << *no << ", message = " << *message << endl;
 }
 
-int main() {
+void null_ptr() {
 
   make_null_point();
 
   //
-
-  return 0;
 }

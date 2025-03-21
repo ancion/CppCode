@@ -53,7 +53,7 @@ void wild_point_appear() {
   cout << "p = " << p << ", *p=" << *p << endl;
 }
 
-int main() {
+int error_ptr() {
 
   wild_point_appear();
 
