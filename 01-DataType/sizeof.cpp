@@ -14,13 +14,19 @@ int main() {
   cout << "sizeof bool : " << sizeof(bool) << endl;
 
   // string 不是 c++ 的基本数据类型，
-  // 使用 sizeof 求内存大小没有实际意义
+  // 使用 sizeof 求内存大小没有实际意义, 或者的只是这个类型的指针的大小
   cout << sizeof(string) << endl;
 
 
   // 计算变量占用空间的大小
   int a = 10;
   cout << sizeof(a) << endl;
+
+
+  // 直接计算字面量的大小
+  // 
+  cout << sizeof(10) << endl;
+
 
 }
 
