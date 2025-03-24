@@ -1,5 +1,5 @@
-
 #include <iostream>
+#include "../include/DataType.h"
 
 using namespace std;
 
@@ -57,12 +57,11 @@ void force_trans() {
 
 }
 
-int main() {
+void datatype_trans() {
   // 隐式自动转换
   auto_trans();
 
   // 强制直接转换
   force_trans();
 
-  return 0;
 }

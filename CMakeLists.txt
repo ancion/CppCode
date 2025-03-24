@@ -16,18 +16,12 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
 
 aux_source_directory(03-oop/ OOP)
 aux_source_directory(point/ POINT)
-
+aux_source_directory(01-DataType/ TYPESOURCE)
 
 add_executable(ccpp src/main.cpp)
 
 add_library(timeops STATIC) 
 target_sources(timeops PRIVATE src/time_op.c)
-
-add_library(vector STATIC)
-target_sources(vector PRIVATE 01-DataType/vector.cpp)
-
-add_library(str STATIC)
-target_sources(str PRIVATE 01-DataType/string.cpp)
 
 add_library(oop STATIC)
 target_sources(oop PRIVATE ${OOP})
@@ -35,14 +29,17 @@ target_sources(oop PRIVATE ${OOP})
 add_library(point STATIC)
 target_sources(point PRIVATE ${POINT})
 
+add_library(dtype STATIC)
+target_sources(dtype PRIVATE ${TYPESOURCE})
+
 add_library(co STATIC)
 target_sources(co PRIVATE 06-coroutine/coroutine.cpp)
+
 
 target_link_libraries(ccpp PRIVATE 
   oop
   timeops 
-  vector 
-  str 
+  dtype
   point
   co
 )

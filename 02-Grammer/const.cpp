@@ -10,14 +10,12 @@
 #define PI 3.14
 #define MONTH 12
 
-int main() {
+void const_usage() {
 
-  std::cout << "PI values is: " << std::endl;
+  std::cout << "PI values is: " << PI  << std::endl;
 
   // const 定义的常量
   // 可以在程序的任意地方定义常量, 一旦定义之后不可再赋值
   const int days = 7;
   std::cout << "one week have :" << days << " days" << std::endl;
-
-  return 0;
 }

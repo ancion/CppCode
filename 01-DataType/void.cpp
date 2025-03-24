@@ -1,5 +1,7 @@
 #include <iostream>
+#include "../include/DataType.h"
 using namespace std;
+
 
 // void 关键字
 // ----------------------------------------------------
@@ -25,7 +27,7 @@ void showHexAddr(string varname, void *p) {
 }
 
 // void
-void run() {
+void void_usage() {
 
   // 显示变量的十六进制地址
   int a;
@@ -39,5 +41,3 @@ void run() {
   showHexAddr("a", &a);
   showHexAddr("b", &a);
 }
-
-int main() { run(); }

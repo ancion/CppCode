@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../include/DataType.h"
 
 using namespace std;
 
@@ -45,13 +46,11 @@ void ptr_bool() {
   cout << "b = " << b << endl;
 }
 
-int main() {
+void bool_usage() {
 
   // boolean
   boolean();
 
   // 通过指针修改 bool 变量值,验证底层使用无符号1字节整数存储的事实
   ptr_bool();
-
-  return 0;
 }

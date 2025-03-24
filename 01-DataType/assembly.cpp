@@ -15,7 +15,7 @@ int fib(int x) {
   return fib(x - 1) + fib(x - 2);
 }
 
-int main() {
+int assemble_usage() {
   int t1, t2;
   // clock 函数得到的是纳秒数。
   t1 = clock();

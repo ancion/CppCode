@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../include/DataType.h"
 
 // 字符 (占用 1byte)
 // ---------------------------------
@@ -26,7 +27,7 @@
 //
 
 
-int main() {
+void char_usage() {
 
   char x = 'a';
   std::cout << x << "占用空间: " << sizeof(char) << std::endl;
@@ -35,7 +36,5 @@ int main() {
 
   // c++ 中没有一个字节的整形，就是因为 char 表示的字符与数字是通用的
   // 字符在运行的时候会被解释成对应的整数，可以整数运算
-
-  return 0;
 
 }

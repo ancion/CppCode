@@ -41,6 +41,7 @@
 
 #include <iostream>
 #include <string>
+#include "../include/DataType.h"
 
 using namespace std;
 
@@ -99,7 +100,7 @@ void number_float() {
 }
 
 
-int main() {
+void number_usage() {
   
   number_float();
 

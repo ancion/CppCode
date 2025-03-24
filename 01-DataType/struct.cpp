@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <cstring>
 #include <iostream>
+#include "../include/DataType.h"
 
 // 避免不同类库中的包中出现同名函数，所以使用的时候使用using声明命名空间
 // 使用的时候可以省略对应的命名空间
@@ -90,10 +91,8 @@ struct Woman {
 };
 
 
-int main() {
+void struct_usage() {
 
   test_struct();
   test_memory_align();
-
-  return 0;
 }

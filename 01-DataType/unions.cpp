@@ -1,4 +1,6 @@
 #include <iostream>
+#include "../include/DataType.h"
+
 // unicn 是一种在 C/C++ 都存在的数据结构
 // 与结构体非常类似，但是不同的是，有时只有一个字段是有效的
 //
@@ -29,7 +31,7 @@ union union_data {
   double union_double;
 };
 
-void unions_usage() {
+void union_usage() {
 
   various_data v_data;
 

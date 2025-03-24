@@ -1,6 +1,8 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include "../include/DataType.h"
+
 using namespace std;
 
 // cpp 中的数组
@@ -480,7 +482,7 @@ void copy_arr() {
 }
 
 //
-int main() {
+void array_usage() {
   cout << "------------>> test of array <<-----------------" << endl;
 
   // 创建数组并赋值

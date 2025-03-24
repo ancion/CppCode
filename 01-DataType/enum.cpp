@@ -1,5 +1,6 @@
 // This program shows off the basics of enums in C++
 
+#include "../include/DataType.h"
 #include <iostream>
 
 using namespace std;
