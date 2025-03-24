@@ -11,6 +11,8 @@ void datatype_trans();
 
 void array_usage();
 
+void container_usage();
+
 void vector_usage();
 
 void str_usage();

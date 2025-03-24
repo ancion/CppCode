@@ -23,6 +23,8 @@ void dataType() {
 
   array_usage();
 
+  container_usage();
+
   vector_usage();
 
   struct_usage();
