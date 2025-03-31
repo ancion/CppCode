@@ -10,6 +10,8 @@
 
 #include <iostream>
 
+using namespace std;
+
 // if else 分支系统
 //  c++ 最多支持 127 层的嵌套
 void ifelse() {
@@ -63,13 +65,44 @@ void sanmu() {
   // 三目表达式可以嵌套使用，但是，过于复杂的的嵌套，可读性很差
 }
 
+
+// C++17 中的新的特新，if 中可以带上初始化条件语句
+
+void initif() {
+
+  string hello = "hello, world in C++17";
+
+  // Before testing we try and find the position
+  auto val1 = hello.find("hello");
+  if (val1 != string::npos) {
+    cout << val1 << "-hello" << val1 << endl;
+  }
+
+  // We need another name (same scope)
+  auto val2 = hello.find("world");
+  if (val2 != string::npos) {
+    cout << val2 << "-world" << val2 << endl;
+  }
+
+  // contain scope using the new init/condition syntax!
+  if (auto val = hello.find("C++17"); val != string::npos) {
+    cout << "Found C++17 at" << val << "without leaking scope" << endl;
+  }
+}
+
+
 int main() {
   // 代码执行流程控制
   ifelse();
+
+  // new init if
+  initif();
 
   // sammu
   sanmu();
 
   // case 分支
   switchcase();
+
+
 }
