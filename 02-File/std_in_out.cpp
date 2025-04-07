@@ -4,8 +4,10 @@
 // C 中使用 printf() 进行格式化输出
 //
 // %c  :  char
-// %u  :  unsign number
-// %d  :  int
+// %u  :  unsign int
+// %d  :  sign int
+// %e  :  指数形式的浮点数
+// %g  :  把输值按照 %e 或 %f 类型中输出长度最小的方式输出
 // %ld :  long 
 // %hd :  short
 // %f  :  float, 默认是7 位小数, 可以使用 `%.nf`  使用 n 确定保留的小数位数
@@ -13,6 +15,8 @@
 // %s  :  string
 // %x  :  hex (十六进制输出)
 // %o  :  Oct (八进制输出)
+// %p  :  pointer(打印地址)
+// %x, %X : 无符号以十六进制表示的整数（常用，打印指针一般会使用）
 
 
 // iostream 文件中定义的 std 包中规定了控制台的标准输入输出
