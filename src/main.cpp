@@ -19,6 +19,7 @@ int main (int argc, char *argv[]) {
   // pointer_usage();
 
   // coroutine();
+  coroutine();
 
   return 0;
 }
