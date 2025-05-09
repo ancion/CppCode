@@ -1,5 +1,5 @@
-#include "../include/spinlock.h"
-#include "../include/thread_pool.h"
+#include "include/spinlock.h"
+#include "include/thread_pool.h"
 #include <pthread.h>
 #include <stdatomic.h>
 

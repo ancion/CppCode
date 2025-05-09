@@ -4,7 +4,7 @@
 //
 //  1. 结尾没有分号
 //  2. 和 #include 一样，在预处理阶段执行，文本替换
-//  3. 值可以时数字，表达式，代码语句等
+//  3. 值可以是数字，表达式，代码语句等
 //  4. 宏定义的好处，便于程序的阅读和维护
 
 //
@@ -58,27 +58,33 @@ void simple() {
 // 对这个宏定义进行取消或者打开的时候，编译运行出不一样的结果
 #define __DEBUG__
 
-void condition_compile() {
+// 条件编译
 #ifdef __DEBUG__
-  printf("%s : This error is in [%s] on line [%d].\n",
-         __FUNCTION__, // 这个宏可以返回函数名称
-         __FILE__,     // 这个宏可以返回文件名称
-         __LINE__);    // 这个宏可以返回行号
+#define DEBUG_VAR(x) printf("%s : This ouput is in [%s] on line [%d] -- %s = %d.\n", \
+        __FUNCTION__, \ // 这个宏可以返回函数名称
+        __FILE__, \    // 这个宏可以返回文件名称
+        __LINE__, \
+        #x, x);    // 这个宏可以返回行号
 #endif
-}
+
 
 // 3. 宏定义中符号的意义
 // # 此符号可以在宏定义中用来展示变量文本 例如
-#define printvar(x) printf("%s is %d\n", #x, x) // 则第一个%s 处显示的是传入的实参的名称
+// 则第一个%s 处显示的是传入的实参的名称(#x 表示变量的名称)
+#define printvar(x) printf("%s is %d\n", #x, x) 
 
 // ## 两个连用的时候表示连接符号
 // 主要用于定义一些连续变量的时候, 例如一个月的每一天
+// 可以使用宏来生成动态的变量名称 day1 day2 day3 ...
 #define DATE(x) int day##x
 #define DATE_VALUE(x) day##x
 
 
-void test() {
-  DATE(1) = DATE_VALUE(x);
+void macro_replace() {
+  DATE(1) = 100;   // int day1 = 100;
+  DATE(21) = 200;  // int day21 = 200;
+  DEBUG_VAR(DATE_VALUE(1));  // day1 is 100
+  DEBUG_VAR(DATE_VALUE(21)); // day21 is 200
 }
 
 // 4. 宏函数的定义
@@ -88,6 +94,5 @@ void test() {
 int main(int argc, char *argv[]) {
 
   simple();
-  condition_compile();
   return EXIT_SUCCESS;
 }

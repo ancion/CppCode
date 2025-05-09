@@ -5,6 +5,9 @@ using namespace std;
 
 template <typename T> T addr(T v) { return v; }
 
+//
+// 可变参数模板
+//
 // Variable number of input arguments in a template 
 // "typename... Args" is a function parameter pack 
 // we can use recursive calls to unpack all the arguments!
