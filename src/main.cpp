@@ -7,13 +7,13 @@
 int main (int argc, char *argv[]) {
 
   // 数据类型
-  dataType();
+  // dataType();
 
   // time 使用规则
   // timeops();
 
-  //
-  // oop_usage();
+  // oop 特性测试
+  oop_usage();
 
   // 
   // pointer_usage();

@@ -16,7 +16,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
 
 aux_source_directory(03-oop/ OOP)
 aux_source_directory(point/ POINT)
-aux_source_directory(01-DataType/ TYPESOURCE)
+aux_source_directory(01-datatype/ TYPESOURCE)
 
 add_executable(ccpp src/main.cpp)
 

@@ -40,4 +40,11 @@ void void_usage() {
   // 这里 int* 和 char* 都可以传递
   showHexAddr("a", &a);
   showHexAddr("b", &a);
+
+  // void* 表示任意类型的指针
+  void *p = &a;
+  cout << "p 的地址是: " << p << endl;
+  // 这里假如我们要使用指针中的值，需要先转换类型才能解引用
+  cout << "p 的值是: " << *(int *)p << endl;
+
 }

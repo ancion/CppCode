@@ -4,6 +4,7 @@
 #include "../include/IntArray.h"
 #include "../include/Vehicle.h"
 #include "../include/Template.h"
+#include "../include/Modifier.h"
 
 void oop_usage() {
 
@@ -24,5 +25,8 @@ void oop_usage() {
   // function template
   template_usage();
 
+
+  // oop modifer 
+  oop_modifer();
 
 }
