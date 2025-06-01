@@ -2,7 +2,7 @@
 #include "../include/cppmod.h"
 #include "../include/Pointers.h"
 #include "../include/DataType.h"
-
+#include <iostream>
 
 int main (int argc, char *argv[]) {
 

@@ -21,7 +21,7 @@ aux_source_directory(01-datatype/ TYPESOURCE)
 add_executable(ccpp src/main.cpp)
 
 add_library(timeops STATIC) 
-target_sources(timeops PRIVATE src/time_op.c)
+target_sources(timeops PRIVATE 10-time/time_op.c)
 
 add_library(oop STATIC)
 target_sources(oop PRIVATE ${OOP})

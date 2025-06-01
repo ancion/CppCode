@@ -82,6 +82,8 @@ void dowhile() {
 }
 
 
+// 建议只在函数内部适用 goto 语法, 如果在程序中随便适用 goto 跳转
+// 代码的维护性和可读性都会大幅下降
 void gotoclause() {
 
   cout << "start" << endl;

@@ -12,3 +12,8 @@ extern void static_func(void);
 
 // 无法引入，因为 kw_static.cpp 中定义的函数 fun 是 static 修饰的
 // extern void fun(void);
+
+// 用于兼容 C 语言, 使用 g++ 编译器的时候告知编译器，这个部分编译，链接适用 C 语言的规则
+extern "C" {
+  
+}

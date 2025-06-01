@@ -38,7 +38,7 @@ void lambda_usage() {
   // sort by height
   sort(buildings.begin(), buildings.end(), sort_rules);
 
-  cout << "port-sort" << endl;
+  cout << "post-sort" << endl;
   for(auto &s: buildings) {
     cout << "Building name: " << s.name << " Building height: " << s.height << endl;
   }
