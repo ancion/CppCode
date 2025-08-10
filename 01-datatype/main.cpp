@@ -34,5 +34,7 @@ void dataType() {
   map_usage();
 
   enum_usage();
-}
 
+  // C++11
+  tuple_usage();
+}

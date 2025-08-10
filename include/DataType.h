@@ -25,6 +25,9 @@ void map_usage();
 
 void enum_usage();
 
+void tuple_usage();
+
+
 // ---------------------------------------------------
 // output function
 void dataType();
