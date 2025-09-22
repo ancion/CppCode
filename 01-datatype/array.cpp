@@ -481,6 +481,69 @@ void copy_arr() {
   }
 }
 
+
+// ----------------------------------------------------------------
+// 柔性数组(可变长度的数组, 在使用时分配)
+// ----------------------------------------------------------------
+// 1. 必须在结构体的最后一个成员 
+// 2. 结构体中必须至少有一个其他成员
+// 3. 柔性数组不占用结构体本身空间大小
+// 4. 实际使用的时候需要动态分配内存
+struct Packet {
+  int len;
+  char data[];
+};
+
+
+void useage_sort_array() {
+  int data_size = 10;
+  struct Packet *pkt = NULL;
+  // 申请内存，单次申请，连续内存(可减少内存碎片)
+  pkt = (struct Packet*) malloc(sizeof(struct Packet) + data_size);
+  // ....
+  pkt -> len = data_size;
+  int i = 0;
+  while(i < data_size) {
+    pkt -> data[i] = 'a' + 1;
+  }
+
+  // 释放内存
+  if (pkt != NULL) {
+    free(pkt);
+    pkt = NULL;
+  }
+}
+
+// 网络数据包结构
+struct net_packet{ 
+  unsigned int id; // 数据包的 id
+  unsigned short type; // 数据包的类型
+  char payload[]; // 实际的数据包
+};
+
+
+void process_packet(struct net_packet *pkt) {
+  printf("Processing packet #%d\n", pkt -> id);
+  printf("Payloaf: %s\n", pkt -> payload); 
+}
+
+// 
+void test_process_packat() {
+  const char *msg = "Hello form network";
+  size_t msg_len = strlen(msg) + 1; // 包含结束符
+  // 动态分配内存
+  struct net_packet *pkt = (struct net_packet *)malloc(sizeof(struct net_packet) + msg_len);
+  
+  // 填充数据
+  pkt -> id = 1001;
+  pkt -> type = 1;
+  memcpy(pkt -> payload, msg, msg_len); // 复制数据
+  process_packet(pkt);
+  free(pkt);
+}
+
+
+
 //
 void array_usage() {
   cout << "------------>> test of array <<-----------------" << endl;
