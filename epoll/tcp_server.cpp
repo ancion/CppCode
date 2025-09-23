@@ -1,4 +1,3 @@
-#include <chrono>
 #include <cstdlib>
 #include <iostream>
 #include <stdio.h>
@@ -109,10 +108,16 @@ int main (int argc, char *argv[]) {
         int bytes_read = read(events[i].data.fd, buffer, BUFFER_SIZE);
         if (bytes_read < 0) {
           close(events[i].data.fd);
+          cout << "raed failed" << endl;
+          continue;
+        }else if (bytes_read == 0) { // 断开连接的时候会触发一个事件, 读取到的字节数量为 0 
+          close(events[i].data.fd);
+          cout << "Client disconnected" << endl;
+          continue;
         }else {
           buffer[bytes_read] = '\0';
           cout << buffer << endl;
-          write(events[i].data.fd, &buffer, sizeof(bytes_read));
+          write(events[i].data.fd, &buffer, bytes_read);
         }
       }
     }

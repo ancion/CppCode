@@ -14,7 +14,6 @@ using namespace std;
 
 int main (int argc, char *argv[]) {
   
-
   struct sockaddr_in serv_addr;
   int sock = 0;
 
@@ -43,7 +42,7 @@ int main (int argc, char *argv[]) {
   printf("Connected to Server \n");
 
   // 发送消息到服务器
-  char* message = "Hello from client";
+  char message[] = "Hello from client";
   send(sock, message, strlen(message), 0);
   printf("Message send %s\n", message);
 
