@@ -28,7 +28,7 @@
 //    double difftime(time_t t1, time_t t0) 
 //      - t1 - t0 的时间差 (返回秒数)
 //
-//  > localtime() 一个时间戳返回的详细信息
+//  > localtime() 一个时间戳返回的详细信息, 它不是线程安全的函数，localtime_r() 是线程安全的
 //
 //     struct tm *localtime(const time_t timep)
 //
@@ -38,12 +38,23 @@
 //          int tm_min;    /* Minutes (0-59) */
 //          int tm_hour;   /* Hours (0-23) */
 //          int tm_mday;   /* Day of the month (1-31) */
-//          int tm_mon;    /* Month (0-11) */
-//          int tm_year;   /* Year - 1900 */
+//          int tm_mon;    /* Month (0-11) */  显示月份需要加 1
+//          int tm_year;   /* Year - 1900 */ 显示年份需要加 1900
 //          int tm_wday;   /* Day of the week (0-6, Sunday = 0) */
 //          int tm_yday;   /* Day in the year (0-365, 1 Jan = 0) */
 //          int tm_isdst;  /* Daylight saving time */
 //       };
+//
+//  > maketime() 的功能与 localtime() 函数相反，用于将 tm 结构体的时间转化为时间戳time_t;
+//     > time_t maketime(struct tm *tm);
+//
+//
+//  > gettimeofday() 用于获取从 1970-01-01 00:00:00 到现在的秒数量 + 当前秒中已经过去的毫秒数  
+//     > int gettimeofday(struct timeval *tv, struct timezone *tz)
+//     > struct timeval {
+//         time_t tv_sec;    /* seconds */
+//         suseconds_t tv_usec; /* and microseconds */
+//     }
 //
 
 
@@ -81,7 +92,6 @@ void diff() {
   // b - a 的秒数
   double s = difftime(b,a);
   printf("执行时间: %lf\n", s);
-
 }
 
 void show_time() {
@@ -94,6 +104,7 @@ void show_time() {
   // 以文本方式显示时间
   char *s = ctime(&t);
   printf("stime: %s\n", s);
+
 }
 
 void timeops() {
