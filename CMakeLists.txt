@@ -17,6 +17,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
 aux_source_directory(03-oop/ OOP)
 aux_source_directory(point/ POINT)
 aux_source_directory(01-datatype/ TYPESOURCE)
+aux_source_directory(06-coroutine/ COROUTINE)
 
 add_executable(ccpp src/main.cpp)
 
@@ -32,8 +33,8 @@ target_sources(point PRIVATE ${POINT})
 add_library(dtype STATIC)
 target_sources(dtype PRIVATE ${TYPESOURCE})
 
-add_library(co STATIC)
-target_sources(co PRIVATE 06-coroutine/coroutine.cpp)
+add_library(coroutine STATIC)
+target_sources(coroutine PRIVATE ${COROUTINE})
 
 
 target_link_libraries(ccpp PRIVATE 
@@ -41,7 +42,7 @@ target_link_libraries(ccpp PRIVATE
   timeops 
   dtype
   point
-  co
+  coroutine
 )
 
 

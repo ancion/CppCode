@@ -2,7 +2,6 @@
 #include "../include/cppmod.h"
 #include "../include/Pointers.h"
 #include "../include/DataType.h"
-#include <iostream>
 
 int main (int argc, char *argv[]) {
 
@@ -13,13 +12,16 @@ int main (int argc, char *argv[]) {
   // timeops();
 
   // oop 特性测试
-  oop_usage();
+  // oop_usage();
 
   // 
   // pointer_usage();
 
   // coroutine();
-  coroutine();
+  // coroutine();
+
+  // 异步任务
+  async_future();
 
   return 0;
 }
