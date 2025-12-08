@@ -103,6 +103,12 @@ int main (int argc, char *argv[]) {
           cout << "epoll_ctl failed" << endl;
           exit(-1);
         }
+
+        // 发送消息
+        char message[] = "hello world!";
+        send(conn_sock, &message, sizeof(message), 0);
+        cout << "Send: " << message << endl;
+
       } else {
         char buffer[BUFFER_SIZE];
         int bytes_read = read(events[i].data.fd, buffer, BUFFER_SIZE);
