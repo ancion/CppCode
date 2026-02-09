@@ -7,12 +7,8 @@
 int main(void) {
   char buff[256];
   int error;
-  lua_State *L = lua_open(); /* opens lua */
-  luaopen_base(L);           /* opens the basic library  */
-  luaopen_table(L);          /* opens the table library */
-  luaopen_io(L);             /* opens the I/O Library */
-  luaopen_string(L);         /* opens the string lib */
-  luaopen_math(L);           /* opens the math lib */
+  lua_State *L = luaL_newstate(); /* opens lua */
+  luaL_openlibs(L);               /* opens all standard libraries */
 
   while (fgets(buff, sizeof(buff), stdin) != NULL) {
     error = luaL_loadbuffer(L, buff, strlen(buff), buff);
