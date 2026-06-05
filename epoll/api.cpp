@@ -1,6 +1,6 @@
 #include <iostream>
-#include <unistd.h>
 #include <sys/epoll.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -35,7 +35,7 @@ int main() {
       return -1;
     }
     for (int i = 0; i < nfds; ++i) {
-      if(events[i].data.fd == STDIN_FILENO) {
+      if (events[i].data.fd == STDIN_FILENO) {
         char buf[512];
         int count = read(events[i].data.fd, buf, size(buf) - 1);
         buf[count] = '\0';

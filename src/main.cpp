@@ -1,9 +1,9 @@
+#include "../include/DataType.h"
+#include "../include/Pointers.h"
 #include "../include/cmod.h"
 #include "../include/cppmod.h"
-#include "../include/Pointers.h"
-#include "../include/DataType.h"
 
-int main (int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 
   // 数据类型
   // dataType();
@@ -14,7 +14,7 @@ int main (int argc, char *argv[]) {
   // oop 特性测试
   // oop_usage();
 
-  // 
+  //
   // pointer_usage();
 
   // coroutine();
