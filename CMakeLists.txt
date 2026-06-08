@@ -15,7 +15,11 @@ include_directories(include)
 
 aux_source_directory(src/*.cpp SOURCES)
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/libs)
+
+# 指定内部子目录中还存在 CMakeLists.txt 的文件夹
+# 行为：进入子目录,执行子目录CMakeLists.txt,再回到当前文件
+# add_subdirectory(src)
 
 aux_source_directory(03-oop/ OOP)
 aux_source_directory(point/ POINT)
